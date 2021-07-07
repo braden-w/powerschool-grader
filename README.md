@@ -1,4 +1,4 @@
-# powerschool-grader
+# Powerschool Grade Summarizer
 Javascript bookmarklet for summarizing grade distribution in Powerschool. Source unknown.
 
 
