@@ -13,4 +13,6 @@ javascript:%20(function()%7B%20let%20mod%20=%20document.createElement(%22DIV%22)
 
 # Usage
 
-On any Powerschool grade page, click the bookmark created above. You will now see a modal showing your grade among categories, as well as options to add or subtract points to see how they affect your grade.
+1. On any Powerschool grade page, click the bookmark created above.
+2. You will now see a modal showing your grade among categories.
+3. Optionally, you add or subtract points to see how they affect your grade.
