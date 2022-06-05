@@ -3,6 +3,7 @@ function calculateSplitGrades() {
   const table = <HTMLTableElement>document.getElementById("scoreTable")
   // Select the table body within table
   const tableBody = table.tBodies[0]
+  const rows = tableBody.rows
   console.log(
     "🚀 ~ file: index.ts ~ line 6 ~ calculateSplitGrades ~ tableBody",
     tableBody
@@ -25,8 +26,8 @@ function calculateSplitGrades() {
     }
     return outp
   }
-  for (let row of tableBody.children) {
-    let row = tableBody.children[a]
+  for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
+    let row = rows.item(rowIndex)
     let cat = row.children[0].innerText
     let points = row.children[1].innerText
     let total = row.children[2].innerText
