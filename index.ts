@@ -7,6 +7,7 @@ function calculateSplitGrades() {
     "🚀 ~ file: index.ts ~ line 6 ~ calculateSplitGrades ~ tableBody",
     tableBody
   )
+
   let categories = []
   let points = []
   let total = []
@@ -44,16 +45,18 @@ function openModal() {
   modal.children[0].children[0].children[0].close = function() {
     document.body.removeChild(modal)
   }
-  let cont = document.createElement("DIV")
+  let cont: HTMLDivElement = document.createElement("div")
   modal.children[0].children[0].appendChild(cont)
   cont.innerHTML =
     "<p>Do you want to split by category?</p><form style='display:inline-block'><input type='submit' value='Yes'></form><form style='display:inline-block'><input type='submit' value='No '></form>"
-  cont.children[1].onsubmit = function(e) {
+  const yesInputButton: HTMLInputElement = cont.children[1] as HTMLInputElement
+  const noInputButton: HTMLInputElement = cont.children[2] as HTMLInputElement
+  yesInputButton.onsubmit = function(e) {
     e.preventDefault()
     calculateSplitGrades()
     return false
   }
-  cont.children[2].onsubmit = function(e) {
+  noInputButton.onsubmit = function(e) {
     e.preventDefault()
     //     calculateNoSplit()
     return false
@@ -62,3 +65,5 @@ function openModal() {
 function main() {
   openModal()
 }
+
+main()
