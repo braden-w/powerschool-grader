@@ -1,3 +1,33 @@
+function calculateSplitGrades() {
+  let categories = []
+  let points = []
+  let total = []
+  function getCat(cat) {
+    for (let a = 0; a < categories.length; a++) {
+      if (categories[a] === cat) return a
+    }
+    return categories.push(cat) - 1
+  }
+  function output() {
+    let outp = ""
+    for (let a = 0; a < categories.length; a++) {
+      let perc = (points[a] * 100) / total[a] + "     "
+      if (perc.indexOf(".") > 0) perc = perc.substring(0, perc.indexOf(".") + 4)
+    }
+    return outp
+  }
+  for (let a = 0; a < myTableBody.children.length; a++) {
+    let row = myTableBody.children[a]
+    let cat = row.children[0].innerText
+    let points = row.children[1].innerText
+    let total = row.children[2].innerText
+    let catIndex = getCat(cat)
+    points[catIndex] = points
+    total[catIndex] = total
+  }
+  alert(output())
+}
+
 function openModal() {
   let modal: HTMLDivElement = document.createElement("div")
   modal.innerHTML =
@@ -15,37 +45,10 @@ function openModal() {
     calculateSplitGrades()
     return false
   }
+}
+function main() {
+  openModal()
   // cont.children[2].onsubmit = function (e) {e.preventDefault(); calculateNoSplit(); return false;};
   let myTableBody = document.getElementById("content-main").children[4]
     .children[5].children[0]
-  function calculateSplitGrades() {
-    let categories = []
-    let points = []
-    let total = []
-    function getCat(cat) {
-      for (let a = 0; a < categories.length; a++) {
-        if (categories[a] === cat) return a
-      }
-      return categories.push(cat) - 1
-    }
-    function output() {
-      let outp = ""
-      for (let a = 0; a < categories.length; a++) {
-        let perc = (points[a] * 100) / total[a] + "     "
-        if (perc.indexOf(".") > 0)
-          perc = perc.substring(0, perc.indexOf(".") + 4)
-      }
-      return outp
-    }
-    for (let a = 0; a < myTableBody.children.length; a++) {
-      let row = myTableBody.children[a]
-      let cat = row.children[0].innerText
-      let points = row.children[1].innerText
-      let total = row.children[2].innerText
-      let catIndex = getCat(cat)
-      points[catIndex] = points
-      total[catIndex] = total
-    }
-    alert(output())
-  }
 }
