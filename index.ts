@@ -1,10 +1,10 @@
 function openModal() {
-	let mod = document.createElement("DIV");
-	mod.innerHTML = "<div style='position:fixed; top:0;left:0;bottom:0;right:0; z-index:100; background-color:rgba(0,0,0,0.4);'><div style='background-color:white; border: 1px solid #888; width:300px; padding:5px; margin: 20px auto;'><span onclick='this.close()' style='cursor:pointer; float:right'>×</span></div></div>";
-	document.body.appendChild(mod);
-	mod.children[0].children[0].children[0].close = function () {document.body.removeChild(mod);};
+	let modal: HTMLDivElement = document.createElement('div');
+	modal.innerHTML = "<div style='position:fixed; top:0;left:0;bottom:0;right:0; z-index:100; background-color:rgba(0,0,0,0.4);'><div style='background-color:white; border: 1px solid #888; width:300px; padding:5px; margin: 20px auto;'><span onclick='this.close()' style='cursor:pointer; float:right'>×</span></div></div>";
+	document.body.appendChild(modal);
+	modal.children[0].children[0].children[0].close = function () {document.body.removeChild(modal);};
 	let cont = document.createElement("DIV");
-	mod.children[0].children[0].appendChild(cont);
+	modal.children[0].children[0].appendChild(cont);
 	cont.innerHTML = "<p>Do you want to split by category?</p><form style='display:inline-block'><input type='submit' value='Yes'></form><form style='display:inline-block'><input type='submit' value='No '></form>";
 	cont.children[1].onsubmit = function (e) {e.preventDefault(); calculateSplitGrades(); return false;};
 	// cont.children[2].onsubmit = function (e) {e.preventDefault(); calculateNoSplit(); return false;};
