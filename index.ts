@@ -1,4 +1,6 @@
 function calculateSplitGrades() {
+  let myTableBody = document.getElementById("content-main").children[4]
+    .children[5].children[0]
   let categories = []
   let points = []
   let total = []
@@ -47,12 +49,10 @@ function openModal() {
   }
   cont.children[2].onsubmit = function(e) {
     e.preventDefault()
-//     calculateNoSplit()
+    //     calculateNoSplit()
     return false
   }
 }
 function main() {
   openModal()
-  let myTableBody = document.getElementById("content-main").children[4]
-    .children[5].children[0]
 }
