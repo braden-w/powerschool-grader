@@ -45,10 +45,14 @@ function openModal() {
     calculateSplitGrades()
     return false
   }
+  cont.children[2].onsubmit = function(e) {
+    e.preventDefault()
+//     calculateNoSplit()
+    return false
+  }
 }
 function main() {
   openModal()
-  // cont.children[2].onsubmit = function (e) {e.preventDefault(); calculateNoSplit(); return false;};
   let myTableBody = document.getElementById("content-main").children[4]
     .children[5].children[0]
 }
