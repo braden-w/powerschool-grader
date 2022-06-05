@@ -1,6 +1,8 @@
 function calculateSplitGrades() {
-  let myTableBody = document.getElementById("content-main").children[4]
-    .children[5].children[0]
+  // Select the table element with id "scoreTable"
+  const table = <HTMLTableElement>document.getElementById("scoreTable")
+  // Select the table body within table
+  const tableBody = table.getElementsByTagName("tbody")[0]
   let categories = []
   let points = []
   let total = []
